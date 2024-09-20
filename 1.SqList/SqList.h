@@ -83,7 +83,7 @@ Status DeleteElement(SqList &L, int index)
     {
         L.data[j] = L.data[j + 1];
     }
-    // [1] [2] [3] [4] É¾³ý 3 --> index = 3
+    // [1] [2] [3] [4] åˆ é™¤ 3 --> index = 3
     // [1] [2] [3] [4]
     //          ^   ^
     //          j |j + 1
@@ -93,7 +93,7 @@ Status DeleteElement(SqList &L, int index)
 
 void PrintList(SqList &L)
 {   
-    if(isEmpty(L)) std::cout << "ÎÞÄÚÈÝ" << std::endl;
+    if(isEmpty(L)) std::cout << "æ— å†…å®¹" << std::endl;
     
     for (int i = 0; i < L.length; i++)
     {
