@@ -42,9 +42,6 @@ int main()
         cout << "8. 指定位置增加元素" << endl;
         cout << "================================" << endl;
         
-        
-        
-        
         cin >> choice;
         
         switch(choice)
