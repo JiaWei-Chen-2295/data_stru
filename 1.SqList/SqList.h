@@ -19,9 +19,11 @@ Status InitList(SqList &L, Box *data);
 Status DestroyList(SqList *L);
 Status AddElement(SqList &L, Box *data);
 Status DeleteElement(SqList &L, int index);
+Status ElementInsert(SqList &L, Box *data, int index);
 void PrintList(SqList &L);
 int FindElement(SqList &L, char box_name[]);
 bool isEmpty(SqList &L);
+
 
 SqList* createSqList(Box *data) 
 {
@@ -54,12 +56,20 @@ Status InitList(SqList &L, Box *data)
 
 Status DestroyList(SqList *L)
 {
-    for (int i = 0; i < L -> length; i++)
+    // ÊÍ·ÅËùÓĞÔªËØ×ÊÔ´
+    for (int i = 0; i < L->length; i++)
     {
-        DestroyBox(L -> data[i]);
+        DestroyBox(L->data[i]);
     }
-    delete[] L;
-    if(L != nullptr) return ERROR;
+    
+    // Çå¿ÕÊı¾İ²¿·Ö£¬Èç¹ûdataÊÇ¶¯Ì¬·ÖÅäµÄÊı×é£¬ÕâÀï¿ÉÒÔÖÃÎªnullptr
+    // ¼ÙÉèSqList½á¹¹Ìå¶¨ÒåÔÊĞíÕâÑù×ö
+    *L->data = nullptr;
+    
+    // ¸üĞÂÁĞ±í³¤¶ÈÎª0
+    L->length = 0;
+    
+    // ·µ»Ø³É¹¦×´Ì¬
     return OK;
 }
 
@@ -83,7 +93,7 @@ Status DeleteElement(SqList &L, int index)
     {
         L.data[j] = L.data[j + 1];
     }
-    // [1] [2] [3] [4] åˆ é™¤ 3 --> index = 3
+    // [1] [2] [3] [4] É¾³ı 3 --> index = 3
     // [1] [2] [3] [4]
     //          ^   ^
     //          j |j + 1
@@ -91,9 +101,24 @@ Status DeleteElement(SqList &L, int index)
     return OK;
 }
 
+Status ElementInsert(SqList &L, Box *data, int index)
+{
+    if (index < 0 || index >= L.length)
+    {
+        return ERROR;
+    }
+    for (int j = L.length; j > index; j--)
+    {
+        L.data[j] = L.data[j - 1];
+    }
+    L.data[index] = data;
+    L.length++;
+    return OK;
+}
+
 void PrintList(SqList &L)
 {   
-    if(isEmpty(L)) std::cout << "æ— å†…å®¹" << std::endl;
+    if(isEmpty(L)) std::cout << "ÎŞÄÚÈİ" << std::endl;
     
     for (int i = 0; i < L.length; i++)
     {

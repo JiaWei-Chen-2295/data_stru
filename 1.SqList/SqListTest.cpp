@@ -10,7 +10,7 @@ using namespace std;
 SqList* newSqList()
 {
     char first_box_name[BOX_NAME_MAX_SIZE];
-    cout << "è¯·è¾“å…¥åˆ—è¡¨ä¸­ç¬¬ä¸€ä¸ªç›’å­åå­—ï¼š" << endl;
+    cout << "ÇëÊäÈëÁÐ±íÖÐµÚÒ»¸öºÐ×ÓÃû×Ö£º" << endl;
     cin >> first_box_name;
     Box *first_box = CreateBox(1, first_box_name);
     SqList *L = createSqList(first_box);
@@ -20,7 +20,7 @@ SqList* newSqList()
 Status addBox(SqList *L)
 {
     char box_name[BOX_NAME_MAX_SIZE];
-    cout << "è¯·è¾“å…¥åˆ—è¡¨ä¸­ç›’å­åå­—ï¼š" << endl;
+    cout << "ÇëÊäÈëÁÐ±íÖÐºÐ×ÓÃû×Ö£º" << endl;
     cin >> box_name;
     return AddElement(*L, CreateBox(L->length + 1, box_name));
 }
@@ -31,14 +31,15 @@ int main()
     while(true)
     {   
         cout << "================================" << endl;
-        cout << "è¯·è¾“å…¥æ“ä½œï¼š" << endl;
-        cout << "1. åˆ›å»ºä¸€ä¸ªç›’å­åˆ—è¡¨" << endl;
-        cout << "2. é”€æ¯å½“å‰ç›’å­åˆ—è¡¨" << endl;
-        cout << "3. æ·»åŠ ä¸€ä¸ªç›’å­" << endl;
-        cout << "4. åˆ é™¤ä¸€ä¸ªç›’å­" << endl;
-        cout << "5. æŸ¥æ‰¾ç›’å­" << endl;
-        cout << "6. æ‰“å°ç›’å­åˆ—è¡¨" << endl;
-        cout << "7. é€€å‡º" << endl;
+        cout << "ÇëÊäÈë²Ù×÷£º" << endl;
+        cout << "1. ´´½¨Ò»¸öºÐ×ÓÁÐ±í" << endl;
+        cout << "2. Ïú»Ùµ±Ç°ºÐ×ÓÁÐ±í" << endl;
+        cout << "3. Ìí¼ÓÒ»¸öºÐ×Ó" << endl;
+        cout << "4. É¾³ýÒ»¸öºÐ×Ó" << endl;
+        cout << "5. ²éÕÒºÐ×Ó" << endl;
+        cout << "6. ´òÓ¡ºÐ×ÓÁÐ±í" << endl;
+        cout << "7. ÍË³ö" << endl;
+        cout << "8. Ö¸¶¨Î»ÖÃÔö¼ÓÔªËØ" << endl;
         cout << "================================" << endl;
         
         
@@ -54,7 +55,7 @@ int main()
                 break;
             case 2:
                 if (L == nullptr) {
-                    cout << "å½“å‰æ²¡æœ‰ç›’å­åˆ—è¡¨" << endl;
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
                     break;
                 }
                 DestroyList(L);
@@ -62,42 +63,42 @@ int main()
                 break;
             case 3:
                 if (L == nullptr) {
-                    cout << "å½“å‰æ²¡æœ‰ç›’å­åˆ—è¡¨" << endl;
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
                     break;
                 }
                 if (!addBox(L)) {
-                    cout << "æ·»åŠ ç›’å­æˆåŠŸ" << endl;
+                    cout << "Ìí¼ÓºÐ×Ó³É¹¦" << endl;
                 } else {
-                    cout << "æ·»åŠ ç›’å­å¤±è´¥" << endl;
+                    cout << "Ìí¼ÓºÐ×ÓÊ§°Ü" << endl;
                 }
                 break;
             case 4:
                 if (L == nullptr) {
-                    cout << "å½“å‰æ²¡æœ‰ç›’å­åˆ—è¡¨" << endl;
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
                     break;
                 }
-                cout << "è¯·è¾“å…¥è¦åˆ é™¤çš„ç›’å­åºå·ï¼š" << endl;
+                cout << "ÇëÊäÈëÒªÉ¾³ýµÄºÐ×ÓÐòºÅ£º" << endl;
                 int index;
                 cin >> index;
                 if (!DeleteElement(*L, index)) {
-                    cout << "åˆ é™¤ç›’å­æˆåŠŸ" << endl;
+                    cout << "É¾³ýºÐ×Ó³É¹¦" << endl;
                 } else {
-                    cout << "åˆ é™¤ç›’å­å¤±è´¥" << endl;
+                    cout << "É¾³ýºÐ×ÓÊ§°Ü" << endl;
                 }
                 break;
             case 5:
                 if (L == nullptr) {
-                    cout << "å½“å‰æ²¡æœ‰ç›’å­åˆ—è¡¨" << endl;
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
                     break;
                 }
-                cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ç›’å­åå­—ï¼š" << endl;
+                cout << "ÇëÊäÈëÒª²éÕÒµÄºÐ×ÓÃû×Ö£º" << endl;
                 char box_name[BOX_NAME_MAX_SIZE];
                 cin >> box_name;
-                cout << "ç›’å­åºå·ä¸ºï¼š" << FindElement(*L, box_name) << endl;
+                cout << "ºÐ×ÓÐòºÅÎª£º" << FindElement(*L, box_name) << endl;
                 break;
             case 6:
                 if (L == nullptr) {
-                    cout << "å½“å‰æ²¡æœ‰ç›’å­åˆ—è¡¨" << endl;
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
                     break;
                 }
                 PrintList(*L);
@@ -105,7 +106,23 @@ int main()
             case 7:
                 cin >> choice;
                 return 0;
-                
+            case 8:
+                if (L == nullptr) {
+                    cout << "µ±Ç°Ã»ÓÐºÐ×ÓÁÐ±í" << endl;
+                    break;
+                }
+                cout << "ÇëÊäÈëÒª²åÈëµÄºÐ×ÓÐòºÅ£º" << endl;
+                int insert_index;
+                cin >> insert_index;
+                cout << "ÇëÊäÈëÒª²åÈëµÄºÐ×ÓÃû×Ö£º" << endl;
+                char insert_box_name[BOX_NAME_MAX_SIZE];
+                cin >> insert_box_name;
+                if (!ElementInsert(*L, CreateBox(insert_index, insert_box_name), insert_index)) {
+                    cout << "²åÈëºÐ×Ó³É¹¦" << endl;
+                } else {
+                    cout << "²åÈëºÐ×ÓÊ§°Ü" << endl;
+                }
+                break;
                 
         }
         
