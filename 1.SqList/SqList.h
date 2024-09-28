@@ -6,8 +6,6 @@
 #include "Box.h"
 #define MAX_SIZE 100
 
-
-
 typedef struct SqList
 {
     Box *data[MAX_SIZE];
@@ -56,20 +54,20 @@ Status InitList(SqList &L, Box *data)
 
 Status DestroyList(SqList *L)
 {
-    // ÊÍ·ÅËùÓÐÔªËØ×ÊÔ´
+    // ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½Ô´
     for (int i = 0; i < L->length; i++)
     {
         DestroyBox(L->data[i]);
     }
     
-    // Çå¿ÕÊý¾Ý²¿·Ö£¬Èç¹ûdataÊÇ¶¯Ì¬·ÖÅäµÄÊý×é£¬ÕâÀï¿ÉÒÔÖÃÎªnullptr
-    // ¼ÙÉèSqList½á¹¹Ìå¶¨ÒåÔÊÐíÕâÑù×ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½dataï¿½Ç¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªnullptr
+    // ï¿½ï¿½ï¿½ï¿½SqListï¿½á¹¹ï¿½å¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     *L->data = nullptr;
     
-    // ¸üÐÂÁÐ±í³¤¶ÈÎª0
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
     L->length = 0;
     
-    // ·µ»Ø³É¹¦×´Ì¬
+    // ï¿½ï¿½ï¿½Ø³É¹ï¿½×´Ì¬
     return OK;
 }
 
@@ -93,7 +91,7 @@ Status DeleteElement(SqList &L, int index)
     {
         L.data[j] = L.data[j + 1];
     }
-    // [1] [2] [3] [4] É¾³ý 3 --> index = 3
+    // [1] [2] [3] [4] É¾ï¿½ï¿½ 3 --> index = 3
     // [1] [2] [3] [4]
     //          ^   ^
     //          j |j + 1
@@ -118,7 +116,7 @@ Status ElementInsert(SqList &L, Box *data, int index)
 
 void PrintList(SqList &L)
 {   
-    if(isEmpty(L)) std::cout << "ÎÞÄÚÈÝ" << std::endl;
+    if(isEmpty(L)) std::cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << std::endl;
     
     for (int i = 0; i < L.length; i++)
     {
@@ -127,6 +125,7 @@ void PrintList(SqList &L)
     }
 }
 
+// æ—¶é—´å¤æ‚åº¦ O(n)
 int FindElement(SqList &L, char box_name[])
 {
     for (int i = 0; i < L.length; i++)
