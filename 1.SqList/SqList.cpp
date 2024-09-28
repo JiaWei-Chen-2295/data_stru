@@ -9,18 +9,18 @@ using namespace std;
 
 int main()
 {
-    Box *box1 = CreateBox(1, "ÎÄ¾ß"); 
-    Box *box2 = CreateBox(2, "ÒÂ·ş"); 
-    Box *box3 = CreateBox(3, "Êé±¾"); 
-    Box *box4 = CreateBox(4, "ÈÕÓÃÆ·"); 
-    Box *box5 = CreateBox(5, "µçÆ÷");
+    Box *box1 = CreateBox(1, "æ–‡å…·"); 
+    Box *box2 = CreateBox(2, "è¡£æœ"); 
+    Box *box3 = CreateBox(3, "ä¹¦æœ¬"); 
+    Box *box4 = CreateBox(4, "æ—¥ç”¨å“"); 
+    Box *box5 = CreateBox(5, "ç”µå™¨");
 
-    // Ê¹ÓÃÊı×é
+    // ä½¿ç”¨æ•°ç»„
     Box *box[] = {box1, box2, box3, box4, box5};
     int box_length = sizeof(box) / sizeof(box[0]);
     cout << "box_length: " << box_length << endl;
 
-    // ÊÍ·Å
+    // é‡Šæ”¾
     for(int i = 0; i < box_length; i++) {
         cout << box[i]->name << endl;
         DestroyBox(box[i]);
@@ -28,13 +28,13 @@ int main()
 
     cout << "=============" << endl;
 
-    // Ê¹ÓÃÎÒÃÇĞ´µÄÏßĞÔ±í(Ë³Ğò±í)
-    // ½«ÖµÔÙ´Î´´½¨
-    box1 = CreateBox(1, "ÎÄ¾ß"); 
-    box2 = CreateBox(2, "ÒÂ·ş"); 
-    box3 = CreateBox(3, "Êé±¾"); 
-    box4 = CreateBox(4, "ÈÕÓÃÆ·"); 
-    box5 = CreateBox(5, "µçÆ÷");
+    // ä½¿ç”¨æˆ‘ä»¬å†™çš„çº¿æ€§è¡¨(é¡ºåºè¡¨)
+    // å°†å€¼å†æ¬¡åˆ›å»º
+    box1 = CreateBox(1, "æ–‡å…·"); 
+    box2 = CreateBox(2, "è¡£æœ"); 
+    box3 = CreateBox(3, "ä¹¦æœ¬"); 
+    box4 = CreateBox(4, "æ—¥ç”¨å“"); 
+    box5 = CreateBox(5, "ç”µå™¨");
 
     SqList *list = createSqList(box1);
     
@@ -52,37 +52,37 @@ int main()
     PrintList(*list);
 
     cout << "=============" << endl;
-    cout << "²éÕÒ" << endl;
+    cout << "æŸ¥æ‰¾" << endl;
     
 
-    cout << "Ä¿Ç°" << list->length << "¸ö" << endl;
-    char search_name[] = "µçÆ÷";
-    cout << search_name << "µÄÏÂ±êÊÇ" << FindElement(*list, search_name)  << endl;
+    cout << "ç›®å‰" << list->length << "ä¸ª" << endl;
+    char search_name[] = "ç”µå™¨";
+    cout << search_name << "çš„ä¸‹æ ‡æ˜¯" << FindElement(*list, search_name)  << endl;
 
     cout << "=============" << endl;
     if(!DeleteElement(*list, 0)) {
-        cout << "³É¹¦É¾³ıµ±Ç° 0 ÎªÏÂ±êµÄÔªËØ" << endl;
+        cout << "æˆåŠŸåˆ é™¤å½“å‰ 0 ä¸ºä¸‹æ ‡çš„å…ƒç´ " << endl;
     }
     if(!DeleteElement(*list, 0)) {
-        cout << "³É¹¦É¾³ıµ±Ç° 0 ÎªÏÂ±êµÄÔªËØ" << endl;
+        cout << "æˆåŠŸåˆ é™¤å½“å‰ 0 ä¸ºä¸‹æ ‡çš„å…ƒç´ " << endl;
     }
     if(!DeleteElement(*list, 0)) {
-        cout << "³É¹¦É¾³ıµ±Ç° 0 ÎªÏÂ±êµÄÔªËØ" << endl;
+        cout << "æˆåŠŸåˆ é™¤å½“å‰ 0 ä¸ºä¸‹æ ‡çš„å…ƒç´ " << endl;
     }
     if(!DeleteElement(*list, 0)) {
-        cout << "³É¹¦É¾³ıµ±Ç° 0 ÎªÏÂ±êµÄÔªËØ" << endl;
+        cout << "æˆåŠŸåˆ é™¤å½“å‰ 0 ä¸ºä¸‹æ ‡çš„å…ƒç´ " << endl;
     }
 
     if(DeleteElement(*list, 0))
-        cout << "³ö´íÁË£¬ Ã»ÓĞÊı¾İ¿ÉÒÔÕÒÁË" << endl;
+        cout << "å‡ºé”™äº†ï¼Œ æ²¡æœ‰æ•°æ®å¯ä»¥æ‰¾äº†" << endl;
     
     PrintList(*list);
-    cout << "µ±Ç°ÊıÁ¿" << list->length << endl;
+    cout << "å½“å‰æ•°é‡" << list->length << endl;
 
     cout << "=============" << endl;
-    cout << "Ïú»Ù" << endl;
+    cout << "é”€æ¯" << endl;
     if(DestroyList(list))
-        cout << "Ïú»ÙÊ§°Ü" << endl;
+        cout << "é”€æ¯å¤±è´¥" << endl;
         
     return 0;
 }

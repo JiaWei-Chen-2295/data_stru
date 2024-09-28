@@ -1,27 +1,27 @@
-# Makefile »ù±¾Óï·¨¸ñÊ½£º
-# Ä¿±ê: ÒÀÀµ
-# 	Ö´ÐÐÓï¾ä
+# Makefile åŸºæœ¬è¯­æ³•æ ¼å¼ï¼š
+# ç›®æ ‡: ä¾èµ–
+# 	æ‰§è¡Œè¯­å¥
 clean:
 	@rm -f SqList.exe SqListTest.exe
 
 SqList:
-	@echo "SqList±àÒëÖÐ"
+	@echo "SqListç¼–è¯‘ä¸­"
 	@g++ SqList.cpp -o SqList.exe
 
-# Ã°ºÅºóÃæÊÇÒÀÀµ Èç¹ûÒÀÀµ²»´æÔÚ ¾Í»á±¨´í ²»»áÖ´ÐÐÏÂÃæµÄÃüÁî
-# ÔÚ²»Ï£Íû»ØÏÔµÄÃüÁîÇ°¼Ó @
+# å†’å·åŽé¢æ˜¯ä¾èµ– å¦‚æžœä¾èµ–ä¸å­˜åœ¨ å°±ä¼šæŠ¥é”™ ä¸ä¼šæ‰§è¡Œä¸‹é¢çš„å‘½ä»¤
+# åœ¨ä¸å¸Œæœ›å›žæ˜¾çš„å‘½ä»¤å‰åŠ  @
 SqListTest: SqListTest
-	@echo "SqListTest±àÒëÖÐ"
+	@echo "SqListTestç¼–è¯‘ä¸­"
 	@g++ SqListTest.cpp -o SqListTest.exe
 
-# blah Ä¿±ê
-# µ±ÒÀÀµ ÊÇ·ÇCÓïÑÔÔ´ÎÄ¼þÊ±£¬Ö»»á¼ì²éÆäÊÇ·ñ´æÔÚ
+# blah ç›®æ ‡
+# å½“ä¾èµ– æ˜¯éžCè¯­è¨€æºæ–‡ä»¶æ—¶ï¼Œåªä¼šæ£€æŸ¥å…¶æ˜¯å¦å­˜åœ¨
 # blahTest: a.txt
-# 	echo "a.txt ´æÔÚ"
+# 	echo "a.txt å­˜åœ¨"
 
-# µ±ÒÀÀµÊÇ CÓïÑÔÔ´´úÂëÊ±£¬¾Í»á±àÒë£¬²¢ÔËÐÐÕâ¸öÄ¿±êÏÂµÄÓï¾ä
+# å½“ä¾èµ–æ˜¯ Cè¯­è¨€æºä»£ç æ—¶ï¼Œå°±ä¼šç¼–è¯‘ï¼Œå¹¶è¿è¡Œè¿™ä¸ªç›®æ ‡ä¸‹çš„è¯­å¥
 # blahTest2: b
-# 	echo "b.XX ´æÔÚ"
+# 	echo "b.XX å­˜åœ¨"
 
-# ÒÀÀµ »¹¿ÉÒÔÊÇ Ä¿±ê
+# ä¾èµ– è¿˜å¯ä»¥æ˜¯ ç›®æ ‡
 all: clean SqList SqListTest
