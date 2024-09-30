@@ -67,5 +67,6 @@ int main()
     PrintListVal(*L);
     
     cout << "===============" << endl;
+    system("pause");
     return 0;
 }

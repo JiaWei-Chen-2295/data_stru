@@ -116,7 +116,7 @@ Status ElementInsert(SqList &L, Box *data, int index)
 
 void PrintList(SqList &L)
 {   
-    if(isEmpty(L)) std::cout << "������" << std::endl;
+    if(isEmpty(L)) std::cout << "list is null" << std::endl;
     
     for (int i = 0; i < L.length; i++)
     {
