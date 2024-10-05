@@ -47,6 +47,7 @@ typedef struct SqList {
             throw std::out_of_range("Index out of bounds");
         }
         for (int i = index; i < size - 1; ++i) {
+            cout << "delete +1";
             Eles[i] = Eles[i + 1];
         }
         --size;
@@ -88,6 +89,16 @@ typedef struct SqList {
         }
         Eles[index] = val;
         size++;
+    }
+
+    int setEle(int index, int val) {
+        if (index < 0 || index >= size) {
+            throw std::out_of_range("Index out of bounds");
+        } 
+
+        int temp = Eles[index];
+        Eles[index] = val;
+        return temp;
     }
 } SqList;
 
