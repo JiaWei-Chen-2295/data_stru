@@ -157,15 +157,15 @@ cout << "==============3================" << endl;
    L4 = new ListNode(1);
    L4_head = L4;
 
-   EndInsertEles(L4, {1, 2, 3, 4, 5, 6});
+   EndInsertEles(L4, {3, 5, 6, 8});
 
    cout << "first:";
    Print(L4_head);
 
-   L5 = new ListNode(1);
+   L5 = new ListNode(2);
    L5_head = L5;
 
-   EndInsertEles(L5, {2, 4, 5});
+   EndInsertEles(L5, {4, 5, 7, 8});
 
    cout << "second:";
    Print(L5_head);
@@ -428,6 +428,7 @@ int count = 0;
         l1 = l1->next;
         count++;
     }
+    res -> next = nullptr;
     *results = dummyHead.next; // 返回结果链表头
     return count;
 }
@@ -620,7 +621,7 @@ void DeleteItemByItem(SqList *list, int ele)
                 int t = list->setEle(start, list->getElement(end));       
                 list->setEle(end, t);
                 end--;
-            } 
+            }
             else
             {
                 end--;
